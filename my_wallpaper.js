@@ -3,6 +3,8 @@ let lapis = "#2A5C86";
 let burntUmber = "#88362B";
 let olive = "#88742B";
 let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let davyGrey ="#4E555F"
 let gunmetal = "#32373E";
 let richblack = "#171E27";
 
@@ -54,7 +56,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(240, 255, 240); //light honeydew green colour
+  background(50, 100, 50); //light honeydew green colour
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
@@ -93,7 +95,11 @@ strokeWeight(2)
 line(148.5, 100.5, 151, 107)
 
 
-
+//opposite side body wing
+fill(richblack);
+stroke(richblack);
+strokeWeight(0)
+arc(95, 101, 80, 8, 130, 300)
   //body
   noStroke()
   fill(gunmetal)
@@ -110,15 +116,24 @@ line(148.5, 100.5, 151, 107)
 
 
   //wings
+  
 
- 
+stroke(platinum)
+fill(platinum)
+ beginShape();
+vertex(100, 90);
+vertex(65, 90);
+vertex(70, 105);
+endShape(CLOSE);
 
-  stroke(richblack);
-  fill(richblack);
+
+
+  stroke(davyGrey);
+  fill(davyGrey);
   beginShape();
   vertex(100, 90);
-  vertex(90, 80);
-  vertex(60, 90);
+  vertex(90, 78.8);
+  vertex(50, 90);
   endShape(CLOSE);
 
  
@@ -130,8 +145,7 @@ arc(100, 100, 60, 40, 170, 300)
 fill(richblack);
 stroke(richblack);
 strokeWeight(0)
-arc(95, 105, 80, 8, 130, 300)
-arc(90, 110, 70, 8, 130, 300)
+arc(90, 105, 70, 8, 130, 300)
 
 
 }
