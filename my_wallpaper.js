@@ -5,27 +5,37 @@ let olive = "#88742B";
 let garnet = "#742E25";
 let gunmetal = "#32373E";
 let richblack = "#171E27";
+
+//body parameters
 let pukekoposx = 100;
 let pukekoposy = 100;
-let wingTopHeight = 95;
 let pukekoThickness = 60;
 let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight/2);
 
 //head parameters
-let headposx = 146
-let headposy = 106
-let headHeight = 10
-let headWidth = headHeight + 2.5
+let headposx = 145;
+let headposy = 106;
+let headWidth = 10;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+let neckstartx = pukekoposx + (pukekoThickness/2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness/2));
+let neckthickness = 10;
+let lowernecklength = necklength *1.8;
+let lowerneckthickness = lowernecklength/2;
 
 //pukeko beak parameters
 
-let beakroundness = 1;
-let beakstartx = headposx + 4;
-let beakstarty = headposy - 1;
-let beaktipx = 155;
-let beaktipy = 120;
-let beakendx = 145;
-let beakendy = 113;
+let beakroundness = .3; //should be <1 for best results
+let beakstartx = headposx + 5;
+let beakstarty = headposy + 1;
+let beaktipx = headposx + 10;
+let beaktipy = headposy + 14;
+let beakendx = headposx;
+let beakendy = headposy + headHeight/2;
 let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
 let beaktoproundy = (beakstarty + beaktipy) / 2;
 let beakbackroundx = (beakstartx + beakendx) / 2;
@@ -50,68 +60,78 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
 
+//neck
+stroke(richblack);
+strokeWeight(3);
+fill(richblack);
+rect(neckstartx, neckstarty, necklength, neckthickness);
+stroke(lapis)
+fill(lapis)
+ellipse(neckstartx - (necklength/2), neckstarty + (neckthickness), lowernecklength, lowerneckthickness);
+
+
+
+//head
+stroke(richblack)
+fill(richblack)
+ellipse(headposx, headposy, headWidth, headHeight);
+
+
+//beak
+stroke(burntUmber);
+fill(burntUmber);
+
+beginShape();
+vertex(beakstartx, beakstarty);
+vertex(beaktoproundx, beaktoproundy);
+vertex(beaktipx, beaktipy);
+vertex(beakendx, beakendy);
+vertex(beakbackroundx, beakbackroundy);
+endShape(CLOSE);
+
+strokeWeight(2)
+line(148.5, 100.5, 151, 107)
+
+
+
   //body
-  stroke(gunmetal)
-  strokeWeight(3)
+  noStroke()
   fill(gunmetal)
-  ellipse(pukekoposx, pukekoposy, pukekoThickness, pukekoHeight);
+  ellipse(pukekoposx, pukekoposy, pukekoThickness, pukekoHeight);//body base
   
-  stroke(lapis)
+  noStroke()
   fill(lapis)
-  arc(pukekoposx, pukekoposy, pukekoThickness, pukekoHeight, 340, 160);
-  //neck and head
-  stroke(lapis);
-  fill(lapis);
-  rect(120, 100, 25, 11);
-  ellipse(120, 110, 30, 15);
+  arc(pukekoposx, pukekoposy, pukekoThickness, pukekoHeight, 340, 140);//lapis overbody
 
-  //head
-  ellipse(145, 106, headHeight, headWidth);
+  fill(gunmetal)
+  arc(pukekoposx+(pukekoThickness/3), pukekoposy, pukekoThickness-(2/3*pukekoThickness), pukekoHeight-20, 260, 325);//dark triangle
 
 
-  //beak
-  stroke(burntUmber);
-  fill(burntUmber);
-
-  beginShape();
-  vertex(beakstartx, beakstarty);
-  vertex(beaktoproundx, beaktoproundy);
-  vertex(beaktipx, beaktipy);
-  vertex(beakendx, beakendy);
-  vertex(beakbackroundx, beakbackroundy);
-  endShape(CLOSE);
-
-
-  line(148, 100.5, 150, 105)
 
 
   //wings
 
-  stroke(richblack);
-  fill(richblack);
-  beginShape();
-  vertex(125, 90);
-  vertex(100, 80); //unfin
-  vertex(100, 120);
-  endShape(CLOSE);
-
-
+ 
 
   stroke(richblack);
   fill(richblack);
   beginShape();
-  vertex(95, wingTopHeight);
-  vertex(60, 120);
-  vertex(105, 110);
+  vertex(100, 90);
+  vertex(90, 80);
+  vertex(60, 90);
   endShape(CLOSE);
 
-  stroke(richblack);
-  fill(richblack);
-  beginShape();
-  vertex(95, wingTopHeight);
-  vertex(60, 110);
-  vertex(105, 110);
-  endShape(CLOSE);
+ 
+  fill(gunmetal);
+strokeWeight(1)
+stroke(gunmetal)
+arc(100, 100, 60, 40, 170, 300)
+
+fill(richblack);
+stroke(richblack);
+strokeWeight(0)
+arc(95, 105, 80, 8, 130, 300)
+arc(90, 110, 70, 8, 130, 300)
 
 
 }
