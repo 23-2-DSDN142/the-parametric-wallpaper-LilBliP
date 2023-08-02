@@ -49,7 +49,7 @@ let Pondy = 140
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
 
@@ -119,7 +119,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   endShape(CLOSE);
 
   strokeWeight(2)
-  line(headposx + headWidth / 2.5, 100.5, 151, beakstarty)
+  line(headposx + headWidth / 2.5, headposy-headHeight/2, beakstartx+1, beakstarty)
 
   //eye
   strokeWeight(1.5);
@@ -154,19 +154,19 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   stroke(platinum)
   fill(platinum)
   beginShape();
-  vertex(100, 90);
-  vertex(65, 90);
-  vertex(70, 105);
+  vertex(pukekoposx, pukekoposy-pukekoposy*.1);
+  vertex(pukekoposx-(2/3*pukekoThickness), pukekoposy-pukekoposy*.1);
+  vertex(pukekoposx-pukekoThickness/2, pukekoposy+pukekoposy*.05);
   endShape(CLOSE);
 
 
-
+//toptailfeather
   stroke(charcoal);
   fill(charcoal);
   beginShape();
-  vertex(100, 90);
-  vertex(90, 78.8);
-  vertex(50, 90);
+  vertex(pukekoposx, pukekoposy-pukekoHeight*.2);
+  vertex(pukekoposx-pukekoThickness/6, pukekoposy-pukekoHeight/2.1);
+  vertex(pukekoposx-pukekoThickness+pukekoThickness/6, pukekoposy-pukekoHeight*.2);
   endShape(CLOSE);
 
   //make back dark
@@ -175,11 +175,11 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   stroke(gunmetal)
   arc(pukekoposx, pukekoposy, pukekoThickness, pukekoHeight - 2, 170, 300)
   //lower back
-  arc(pukekoposx - 10, pukekoposy + 5, 30, 30, 90, 180)
+  arc(pukekoposx - 10, pukekoposy + 5, pukekoThickness/2, pukekoThickness/2, 90, 180)
   //lowertail feather
   fill(richblack);
   stroke(richblack);
   strokeWeight(0)
-  arc(pukekoposx - 10, pukekoposy + 5, pukekoThickness + pukekoThickness / 6, 8, 130, 300)
+  arc(pukekoposx - 10, pukekoposy + 5, pukekoThickness + pukekoThickness/6, 8, 130, 300)
 
 }
