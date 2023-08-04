@@ -43,6 +43,11 @@ let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
 let beaktoproundy = (beakstarty + beaktipy) / 2;
 let beakbackroundx = (beakstartx + beakendx) / 2;
 let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+let frontlegtopx = 100
+let backlegtopx = 95
+let frontlegtopy = pukekoposy + pukekoHeight/2
+let backlegtopy = pukekoposy + pukekoHeight/3
 //pond
 let Pondx = 100
 let Pondy = 140
@@ -74,8 +79,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   //legs
   stroke(safetyorange);
   strokeWeight(4);
-  line(100, 120, 98, 130); //front
-  line(95, 110, 80, 120); //back
+  line(frontlegtopx, frontlegtopy, 98, 130); //front
+  line(backlegtopx, backlegtopy, 80, 120); //back
 
 
   strokeWeight(3.5);
@@ -181,5 +186,6 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   stroke(richblack);
   strokeWeight(0)
   arc(pukekoposx - 10, pukekoposy + 5, pukekoThickness + pukekoThickness/6, 8, 130, 300)
+
 
 }
