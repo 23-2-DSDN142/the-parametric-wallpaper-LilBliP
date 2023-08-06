@@ -13,9 +13,9 @@ let harvestGold = "#DB9304";
 let hunterGreen = "#326432";
 let fernGreen = "#3C823C"
 
-let Night = false //true/false
+let Night = true //true/false
 let grass = true //true/false
-let pukeko = false //true/false
+let pukeko = true //true/false
 
 //body parameters
 
