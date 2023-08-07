@@ -13,25 +13,27 @@ let harvestGold = "#DB9304";
 let hunterGreen = "#326432";
 let fernGreen = "#3C823C"
 
-let Night = true //true/false
-let grass = true //true/false
-let pukeko = true //true/false
+let Night = false //true/false  0 1 1 1 1 0 0 0
+let grass = true //true/false  0 0 1 0 1 1 1 0
+let pukeko = true //true/false 0 0 0 1 1 0 1 1
 
 //body parameters
 
 
 let pukekoposx = 100;
 let pukekoposy = 100;
-let pukekoThickness = 60;
+let pukekoThickness = 60; //can be changed but gets a bit wak
 let pukekoHeight = pukekoThickness - 15;
 let wingTopHeight = pukekoposy - (pukekoHeight / 2);
 
 //head parameters
 //editable
-let headposx = 145;
-let headposy = 106;
+let neckthickness = 10;//has to be above headposy
+//editable
+let headposx = pukekoposx + pukekoThickness - 15;
 let headWidth = 10;
 //noneditable
+let headposy = pukekoposy + neckthickness/2 + 1;
 let headHeight = headWidth + 2.5;
 
 //neck parameters
@@ -39,9 +41,6 @@ let headHeight = headWidth + 2.5;
 let neckstartx = pukekoposx + (pukekoThickness / 2);
 let neckstarty = pukekoposy;
 let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
-//editable
-let neckthickness = 10;
-//noneditable
 let lowernecklength = necklength * 1.8;
 let lowerneckthickness = lowernecklength / 2;
 
@@ -60,9 +59,13 @@ let beaktoproundy = (beakstarty + beaktipy) / 2;
 let beakbackroundx = (beakstartx + beakendx) / 2;
 let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
 //legs
-//editable
-let frontlegtopx = 100
-let backlegtopx = 95
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness/12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2/3*pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight/2.25;
 //noneditable
 let frontlegtopy = pukekoposy + pukekoHeight / 2
 let backlegtopy = pukekoposy + pukekoHeight / 3
@@ -99,13 +102,13 @@ if(pukeko == true)  {
   //legs
   stroke(safetyorange);
   strokeWeight(4);
-  line(frontlegtopx, frontlegtopy, 98, 130); //front
-  line(backlegtopx, backlegtopy, 80, 120); //back
+  line(frontlegtopx, frontlegtopy, frontkneex,frontkneey); //front
+  line(backlegtopx, backlegtopy, backkneex, backkneey); //back
 
 
   strokeWeight(3.5);
-  line(98, 130, 105, 145); //front
-  line(80, 120, 78, 140); //back
+  line(frontkneex,frontkneey, 105, 145); //front
+  line(backkneex, backkneey, 78, 140); //back
 }
 
   //pond
