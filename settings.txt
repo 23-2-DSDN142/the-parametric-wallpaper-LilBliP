@@ -2,52 +2,952 @@ You will need to fill out this file for hand in.
 The bellow is just an example, feel free to disregard this documents contents.
 
 
-Your final settings.txt will look something like this when you are finished:
+wallpaper1
 
-/////////////////////////////////
+let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
 
-Wallpaper 1:
+let Night = false;
+let grass = true;
+let pukeko = true;
+let bigsplash = true;
 
-//your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+//body parameters
 
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+let pukekoposx = 100;
+let pukekoposy = 100;
+let pukekoThickness = 60; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 100;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
 }
 
-/////////////////////////////////
-
-Wallpaper 2:
-
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
-
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 100;
+}
+
+  wallpaper2
+
+  let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
+
+let Night = true;
+let grass = true;
+let pukeko = true;
+let bigsplash = true;
+
+//body parameters
+
+
+let pukekoposx = 100;
+let pukekoposy = 100;
+let pukekoThickness = 60; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 100;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
+}
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 100;
+}
+
+  wallpaper3
+
+  let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
+
+let Night = false;
+let grass = false;
+let pukeko = true;
+let bigsplash = true;
+
+//body parameters
+
+
+let pukekoposx = 100;
+let pukekoposy = 100;
+let pukekoThickness = 60; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 100;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
+}
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 100;
+}
+
+wallpaper4
+
+let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
+
+let Night = false;
+let grass = true;
+let pukeko = false;
+let bigsplash = true;
+
+//body parameters
+
+
+let pukekoposx = 100;
+let pukekoposy = 100;
+let pukekoThickness = 60; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 100;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
+}
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 0;
+}
+
+wallpaper5
+
+let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
+
+let Night = false;
+let grass = true;
+let pukeko = true;
+let bigsplash = true;
+
+//body parameters
+
+
+let pukekoposx = 100;
+let pukekoposy = 100;
+let pukekoThickness = 50; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 100;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
+}
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 75;
+}
+
+wallpaper6
+
+let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
+
+let Night = true;
+let grass = false;
+let pukeko = true;
+let bigsplash = false;
+
+//body parameters
+
+
+let pukekoposx = 100;
+let pukekoposy = 100;
+let pukekoThickness = 60; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 100;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
+}
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 75;
+}
+
+wallpaper7
+
+let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
+
+let Night = true;
+let grass = true;
+let pukeko = false;
+let bigsplash = false;
+
+//body parameters
+
+
+let pukekoposx = 100;
+let pukekoposy = 100;
+let pukekoThickness = 60; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 100;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
+}
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 75;
+}
+
+wallpaper8
+
+let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
+
+let Night = false;
+let grass = true;
+let pukeko = true;
+let bigsplash = true;
+
+//body parameters
+
+
+let pukekoposx = 180;
+let pukekoposy = 100;
+let pukekoThickness = 60; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 100;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
+}
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 75;
+}
+
+wallpaper9
+
+let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
+
+let Night = true;
+let grass = true;
+let pukeko = true;
+let bigsplash = true;
+
+//body parameters
+
+
+let pukekoposx = 140;
+let pukekoposy = 100;
+let pukekoThickness = 60; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 100;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
+}
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 75;
+}
+
+final/favourite wallpaper
+
+let lapis = "#2A5C86";
+let burntUmber = "#88362B";
+let olive = "#88742B";
+let garnet = "#742E25";
+let platinum = "#DFE0E0"
+let charcoal = "#3C434C"
+let gunmetal = "#272C36";
+let richblack = "#171E27";
+let safetyorange = "#EE7F30";
+let harvestGold = "#DB9304";
+let hunterGreen = "#326432";
+let fernGreen = "#3C823C";
+
+let Night = false;
+let grass = true;
+let pukeko = true;
+let bigsplash = true;
+
+//body parameters
+
+
+let pukekoposx = 130;
+let pukekoposy = 100;
+let pukekoThickness = 60; //can be changed but gets a bit wak
+
+let pukekoHeight = pukekoThickness - 15;
+let wingTopHeight = pukekoposy - (pukekoHeight / 2);
+
+//head parameters
+//editable
+let neckthickness = 10; //has to be above headposy
+let headposx = pukekoposx + pukekoThickness - 15; //final number editable
+let headWidth = 10;
+
+//noneditable
+let headposy = pukekoposy + neckthickness / 2 + 1;
+let headHeight = headWidth + 2.5;
+
+//neck parameters
+//noneditable
+let neckstartx = pukekoposx + (pukekoThickness / 2);
+let neckstarty = pukekoposy;
+let necklength = headposx - (pukekoposx + (pukekoThickness / 2));
+let lowernecklength = necklength * 1.8;
+let lowerneckthickness = lowernecklength / 2;
+
+//pukeko beak parameters
+//editable
+let beakroundness = .5; //should be <1 for best results
+//noneditable
+let beakstartx = headposx + headWidth / 2;
+let beakstarty = headposy + headHeight / 6;
+let beaktipx = headposx + 8;
+let beaktipy = headposy + 12;
+//noneditable
+let beakendx = headposx;
+let beakendy = headposy + headHeight / 2;
+let beaktoproundx = (beakstartx + beaktipx) / 2 + beakroundness;
+let beaktoproundy = (beakstarty + beaktipy) / 2;
+let beakbackroundx = (beakstartx + beakendx) / 2;
+let beakbackroundy = (beakstarty + beakendy) / 2 - beakroundness;
+//legs
+//noneditable
+let frontlegtopx = pukekoposx;
+let backlegtopx = pukekoposx - pukekoThickness / 12;
+let frontkneex = frontlegtopx - 2;
+let frontkneey = pukekoposy + 2 / 3 * pukekoHeight;
+let backkneex = backlegtopx - 15;
+let backkneey = pukekoposy + pukekoHeight / 2.25;
+let backfoot = backkneex - 5
+let frontfoot = frontkneex + 10
+let frontlegtopy = pukekoposy + pukekoHeight / 2;
+let backlegtopy = pukekoposy + pukekoHeight / 3;
+//pond
+//editable
+let Pondx = 110;
+let Pondy = 140;
+if (pukeko == true) {
+  let pondx = pukekoposx;
+  let pondy = pukekoposy + pukekoHeight
+}
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 75;
 }
